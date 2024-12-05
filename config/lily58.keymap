@@ -14,7 +14,7 @@
         lh_pht: left_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
+            flavor = "hold-preferred";
             tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
@@ -23,7 +23,7 @@
         rh_pht: right_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
+            flavor = "hold-preferred";
             tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
@@ -44,7 +44,7 @@
             bindings = <
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                                                          &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
 &kp TAB   &kp Q  &kp W  &kp F    &kp P    &kp G                                                           &kp J  &kp L    &kp U     &kp Y   &kp SEMI &kp MINUS
-&kp BKSP  &mt LGUI A  &mt LALT R  &mt LCTRL S    &mt LSHFT T    &kp D                     &kp H  &mt RSHFT N    &mt LCTRL E     &mt LALT I   &mt LGUI O &kp SQT
+&kp BKSP  &lh_pht LALT A  &lh_pht LCTRL R  &lh_pht LSHFT S    &lh_pht LGUI T    &kp D                     &kp H  &mt RGUI N &mt LSHFT E &mt LCTRL I &mt LALT O &kp SQT
 &kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT                                                 &kp RBKT &kp K  &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                         &kp LALT &kp LGUI &mo 1  &kp SPACE                                                &kp RET  &mo 2  &kp BSPC &kp RGUI
             >;
